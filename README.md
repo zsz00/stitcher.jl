@@ -1,2 +1,2 @@
-# stither.jl
-stither images
+# stitcher.jl
+stitcher images by julia language
