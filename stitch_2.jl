@@ -1,4 +1,4 @@
-# stitcher 
+# stitcher: Features match get H, then warp and stitch.  没有外参， 求出的H，就是外参集合.
 using Images, ImageFeatures, FileIO, ImageView, ImageDraw, Colors
 
 img1 = load("test/imgs/1.jpg")
