@@ -1,5 +1,7 @@
-# stitcher   http://learningjulia.com/2018/08/25/image-stitching-part-2.html
-using Images, ImageFeatures, FileIO, ImageView, ImageDraw, Colors
+# stitcher  
+# stitcher: Features match get H, then warp and stitch.  没有外参， 求出的H，就是外参集合.
+#  http://learningjulia.com/2018/08/25/image-stitching-part-2.html
+using Images, ImageFeatures, FileIO, ImageView, ImageDraw, Colors;
 
 img1 = load("test/imgs/1.jpg")
 img2 = load("test/imgs/2.jpg")
