@@ -13,4 +13,4 @@ println(a.minor)
 t = ccall((:TYLibVersion, "libtycam.so"), Int32, (a,))
 println(t)
 println(a)
-
+   

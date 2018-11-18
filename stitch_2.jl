@@ -1,4 +1,4 @@
-# stitcher 
+# stitcher   http://learningjulia.com/2018/08/25/image-stitching-part-2.html
 using Images, ImageFeatures, FileIO, ImageView, ImageDraw, Colors
 
 img1 = load("test/imgs/1.jpg")
@@ -80,8 +80,8 @@ grid = draw_matches(img1, img2, matches)
 H_computed_rot = compute_homography(matches)  # get homography matrix
 println(axes(H_computed_rot.m))
 println(H_computed_rot)
-img1_warp = ImageTransformations.AffineMap(img1, H_computed_rot.m);
-img1_warp = ImageTransformations.warp(img1, H_computed_rot.m)  # ??
+# img1_warp = ImageTransformations.AffineMap(img1, H_computed_rot.m);
+img1_warp = ImageTransformations.warp(img1, H_computed_rot.m)  # error.  最后一步失败
 
 
 # using ImageProjectiveGeometry
