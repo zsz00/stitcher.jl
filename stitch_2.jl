@@ -1,10 +1,13 @@
 # stitcher: Features match get H, then warp and stitch.  没有外参， 求出的H，就是外参集合.
 # http://learningjulia.com/2018/08/25/image-stitching-part-2.html
 using Images, ImageFeatures, FileIO, ImageView, ImageDraw, Colors;
+include("pycall_test.jl")
+
 
 img1 = load("test/imgs/1.jpg")
 img2 = load("test/imgs/2.jpg")
-# imshow(img1)
+# imshow(img1) PyArray
+# println("aa:", typeof(img1))
 
 function get_descriptors(img::AbstractArray)
     imgp = parent(img)
@@ -15,10 +18,13 @@ end
 
 
 function match_points(img1::AbstractArray, img2::AbstractArray, threshold::Float64=0.1)
-    img1p = parent(img1)
-    img2p = parent(img2)
-    desc_1, ret_features_1 = get_descriptors(img1p)
-    desc_2, ret_features_2 = get_descriptors(img2p)
+    # img1p = parent(img1)
+    # img2p = parent(img2)
+    # desc_1, ret_features_1 = get_descriptors(img1p)
+    # desc_2, ret_features_2 = get_descriptors(img2p)
+    desc_1, ret_features_1 = get_features(img1)
+    desc_2, ret_features_2 = get_features(img2)
+    
     matches = ImageFeatures.match_keypoints(
         Keypoints(ret_features_1), Keypoints(ret_features_2), desc_1, desc_2, threshold)
 end
