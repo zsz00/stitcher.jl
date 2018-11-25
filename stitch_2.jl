@@ -4,8 +4,8 @@ using Images, ImageFeatures, FileIO, ImageView, ImageDraw, Colors;
 include("pycall_test.jl")
 
 
-img1 = load("test/imgs/1.jpg")
-img2 = load("test/imgs/2.jpg")
+img1 = load(raw"C:\zsz\ML\code\julia\stitcher\test\imgs\1.jpg")
+img2 = load(raw"C:\zsz\ML\code\julia\stitcher\test\imgs\2.jpg")
 # imshow(img1) PyArray
 # println("aa:", typeof(img1))
 
